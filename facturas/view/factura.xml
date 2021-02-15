@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<act_window id="facturas_factura_action" name="factura"
+			res_model="facturas.factura" />
+		<record id="facturas_factura_tree" model="ir.ui.view">
+			<field name="name">Lista facturas</field>
+			<field name="model">facturas.factura</field>
+			<field name="arch" type="xml">
+				<tree>
+					<field name="idfactura"/>
+					<field name="empresa"/>
+					<field name="telefono"/>
+					<field name="cliente"/>
+					<field name="producto"/>
+				</tree>
+			</field>
+		</record>
+		<record id="facturas_factura_view_search"
+			model="ir.ui.view">
+			<field name="name">Busqueda datos</field>
+			<field name="model">facturas.factura</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="idfactura"/>
+					<field name="empresa"/>
+					<field name="telefono"/>
+					<field name="cliente"/>
+					<field name="producto"/>
+				</search>
+			</field>
+		</record>
+		<act_window id="facturas_cliente_action" name="cliente"
+			res_model="facturas.cliente" />
+		<record id="facturas_cliente_tree" model="ir.ui.view">
+			<field name="name">Lista clientes</field>
+			<field name="model">facturas.cliente</field>
+			<field name="arch" type="xml">
+				<tree>
+					<field name="nombre"/>
+					<field name="dni"/>
+				</tree>
+			</field>
+		</record>
+		<record id="facturas_cliente_view_search"
+			model="ir.ui.view">
+			<field name="name">Busqueda datos</field>
+			<field name="model">facturas.cliente</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="nombre"/>
+					<field name="dni"/>
+				</search>
+			</field>
+		</record>
+		<act_window id="facturas_producto_action" name="pais"
+			res_model="facturas.producto" />
+		<record id="facturas_producto_tree" model="ir.ui.view">
+			<field name="name">Lista productos</field>
+			<field name="model">facturas.producto</field>
+			<field name="arch" type="xml">
+				<tree>
+					<field name="idproducto"/>
+					<field name="nombre"/>
+					<field name="precio"/>
+				</tree>
+			</field>
+		</record>
+		<record id="facturas_producto_view_search"
+			model="ir.ui.view">
+			<field name="name">Busqueda datos</field>
+			<field name="model">facturas.producto</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="idproducto"/>
+					<field name="nombre"/>
+					<field name="precio"/>
+				</search>
+			</field>
+		</record>
+
+		<menuitem name ="Facturas" id="menu_inicio" sequence="10"/>
+		<menuitem name="Facturas" id="menu_facturas" parent="menu_inicio" sequence="10"/>
+		<menuitem name="Factura" id="menu_factura" action="facturas_factura_action" parent="menu_facturas" sequence="10"/>
+
+		<menuitem name="Clientes" id="menu_clientes" parent="menu_inicio" sequence="10"/>
+		<menuitem name="Cliente" id="menu_cliente" action="facturas_cliente_action" parent="menu_clientes" sequence="10"/>
+
+		<menuitem name="Productos" id="menu_productos" parent="menu_inicio" sequence="10"/>
+		<menuitem name="Producto" id="menu_producto" action="facturas_producto_action" parent="menu_productos" sequence="10"/>
+	</data>
+</odoo>
